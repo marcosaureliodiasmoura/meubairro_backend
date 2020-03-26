@@ -1,6 +1,6 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('helpme', {
+    return queryInterface.createTable('helpers', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -53,6 +53,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('helpme');
+    return queryInterface.dropTable('helpers');
   },
 };

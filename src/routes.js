@@ -1,9 +1,19 @@
-const { Router } = require('express');
+import { Router } from 'express';
+import Helper from './app/models/helper';
 
 const routes = new Router();
 
-routes.get('/', (req, res) => {
-  return res.json({ message: 'Olá mundo, vamos salvar vidas' });
+routes.get('/', async (req, res) => {
+  const help = await Helper.create({
+    name: 'Maria',
+    surname: 'Do Barro',
+    phone: '81996732525',
+    product: 'Água mineral',
+    description: 'Preciso de água e n tenho como comprar',
+    latitude: -8.144991,
+    longitude: -34.964849,
+  });
+  return res.json(help);
 });
 
-module.exports = routes;
+export default routes;
